@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Mind2Chat - Mind to chat?</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+
+	<div id="appContainer" class="container">
+		<div class="row">
+			<div id="status" class="col">
+				Please authorise SAFE Chat!
+			</div>
+		</div>
+		<div id="mainContainer" class="row">
+			<div id="sidebar" class="col-md-4">
+				<div id="userInfo" class="row no-gutters">
+					<div class="col-md-9">
+						<h6>Welcome {{ username }}!</h6>
+					</div>
+					<div class="col">
+						<button type="button" class="btn btn-primary btn-sm float-right" v-if="loginSuccessful" data-toggle="modal" data-target="#newConversationModal">
+						  New
+						</button>
+					</div>
+				</div>
+				<div id="conversationList" class="row"></div>
+			</div>
+			<div id="chatWindow" class="col-md-8">
+				<div id="messageList" class="row">
+					<div id="messages" class="col">
+
+					</div>
+				</div>
+				<div id="editor" class="row" v-if="loginSuccessful">
+					<div class="col-md-9">
+						<input type="text" id="editorInput" name="message" @keydown.enter="sendMessage" />
+					</div>
+					<div class="col">
+						<button type="button" class="btn btn-primary btn-sm float-right" @click="sendMessage">Send!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="newConversationModal" tabindex="-1" role="dialog" aria-labelledby="newConversationModalTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="newConversationModalTitle">New conversation</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Enter username:
+					<input type="text" id="chatUserInput" name="chatUserInput" @keydown.enter="startConversation" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" @click="startConversation">Start conversation</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="registerModalTitle">Register new user</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Enter username:
+					<input type="text" id="registerUsernameInput" name="registerUsernameInput" @keydown.enter="register" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" @click="register">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/vue-2.4.4.min.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/safe.js"></script>
+	<script src="/js/sha3.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>
