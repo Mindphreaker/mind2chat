@@ -6,7 +6,7 @@ In order to see a live demo, download the SAFE Browser and visit: safe://mind2ch
 Please note that you have to be at least Trust Level 1 on the safenet forum to register an account on SAFE:
 https://safenetforum.org/t/trust-level-1-requirements/15200
 
-Download SAFE Browser:
+Download SAFE Browser:<br>
 https://github.com/maidsafe/safe_browser/releases/tag/alpha-2
 
 Features:
@@ -20,5 +20,5 @@ Possible ToDo's:
 - Minimize modification operations
 - Code cleanup
 
-Forum discussion (for feedback etc.):
+Forum discussion (for feedback etc.):<br>
 https://safenetforum.org/t/mind-chat-private-chat-app/17445
